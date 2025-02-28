@@ -7,32 +7,23 @@ function App() {
   const [tableData, setTableData] = useState({
     headers: ["Company", "Contact", "Country"],
     rows: [
-      { Company: "John Doe", Contact: 30, Country: "New York" },
-      { Company: "Jane Smith", Contact: 25, Country: "Los Angeles" },
-      { Company: "Tom Brown", Contact: 28, Country: "Chicago" },
+      { Company: "Alfreds Futterkiste", Contact: "Maria Anders", Country: "Germany" },
+      { Company: "Centro comercial Moctezuma", Contact: "Francisco Chang", Country: "Mexico" },
+      { Company: "Ernst Handel", Contact: "Roland Mendel", Country: "Austria" },
+      { Company: "Island Trading", Contact: "Helen Bennett", Country: "UK" },
+      { Company: "Laughing Bacchus Winecellars", Contact: "Yoshi Tannamuri", Country: "Canada" },
+      { Company: "Magazzini Alimentari Riuniti", Contact: "Giovanni Rovelli", Country: "Italy" },
     ],
   });
-  
 console.log(tableData.headers)
  // Access the headers array
  const { headers, rows } = tableData;
   return (
-    <>
-    {/* {headers.map((value, index) => (
-      <p>
-        {value}
-      </p>
-    ))}
-    {rows.map((value, index) => (
-      <p>
-        {value.Company}
-      </p>
-    ))} */}
+    <div className='p-4 mt-20' >
+      <TableDisplay headers = {headers} rows = {rows} classes="p-8 w-full bg-red-200"/>
+    </div>
 
-    
 
-     <TableDisplay />
-    </>
   )
 }
 

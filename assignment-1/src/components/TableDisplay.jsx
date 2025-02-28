@@ -1,35 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const TableDisplay = () => {
+const TableDisplay = ({ headers, rows, classes }) => {
   return (
-    <table >
+    <div className="overflow-x-auto">
+      <table className={`border-collapse w-full ${classes}`}>
         <thead>
-          <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+          <tr className="bg-gray-100">
+            {headers.map((value, index) => (
+              <th key={index} className="border px-4 py-2 text-left font-bold">{value}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>30</td>
-            <td>New York</td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>25</td>
-            <td>Los Angeles</td>
-          </tr>
-          <tr>
-            <td>Tom Brown</td>
-            <td>28</td>
-            <td>Chicago</td>
-          </tr>
+          {rows.map((value, key) => (
+            <tr key={key} className={`${key % 2 === 0 ? "bg-gray-200" : "bg-white"}`}>
+              <td className="border px-4 py-2">{value.Company}</td>
+              <td className="border px-4 py-2">{value.Contact}</td>
+              <td className="border px-4 py-2">{value.Country}</td>
+            </tr>
+          ))}
         </tbody>
-      
-    </table>
-  )
-}
+      </table>
+    </div>
+  );
+};
 
-export default TableDisplay
+export default TableDisplay;
