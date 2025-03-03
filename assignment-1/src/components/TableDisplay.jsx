@@ -6,7 +6,7 @@ const TableDisplay = ({ headers, rows, classes }) => {
     <div className="overflow-x-auto">
       <table className={`border-collapse w-full ${classes}`}>
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-gray-200">
             {headers.map((value, index) => (
               <th key={index} className="border px-4 py-2 text-left font-bold" scope="col">
                 {value}
